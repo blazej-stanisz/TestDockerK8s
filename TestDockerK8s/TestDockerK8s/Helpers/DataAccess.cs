@@ -14,7 +14,7 @@ namespace TestDockerK8s.Helpers
         {
             try
             {
-                _client = new MongoClient("mongodb://localhost:27017");
+                _client = new MongoClient("mongodb://localhost:27017?serverSelectionTimeoutMS=300&connectTimeoutMS=300&socketTimeoutMS=300");
                 _db = _client.GetDatabase("TestDockerK8s");
             }
             catch 
